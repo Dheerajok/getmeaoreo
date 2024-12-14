@@ -3,7 +3,7 @@ import React from 'react'
 const Footer = () => {
   return (
     <footer className="text-white body-font bg-black w-full ">
-  <div className="container px-5 py-4 md:py-8 flex items-center sm:flex-row flex-col h-[20vh] md:h-[5vh]">
+  <div className="container px-5 py-4 md:py-8 mx-auto flex items-center sm:flex-row flex-col h-[20vh] md:h-[5vh]">
     <a className="flex title-font font-medium items-center md:justify-start justify-center text-white">
       <svg
         xmlns="http://www.w3.org/2000/svg"

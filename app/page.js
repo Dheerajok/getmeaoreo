@@ -6,7 +6,7 @@ export default function Home() {
   return (
    <>
    
-   <div className=" md:h-[230vh] bg-[#000000] bg-[radial-gradient(#ffffff33_1px,#00091d_1px)] bg-[size:20px_20px] lg:w-[100%]">
+   <div className="container md:h-[230vh] bg-[#000000] bg-[radial-gradient(#ffffff33_1px,#00091d_1px)] bg-[size:20px_20px] lg:w-[100%]">
 
   
     <div className="intro flex justify-center items-center h-[101vh] md:pt-[5%] flex-col gap-1 border-b-2">

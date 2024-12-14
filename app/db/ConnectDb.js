@@ -1,7 +1,5 @@
 import mongoose from "mongoose";
 
-
-
 const connectDB = async () => {
     try {
       const client = await mongoose.connect(`mongodb://localhost:27017/getmeoreo`, {

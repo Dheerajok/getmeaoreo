@@ -33,7 +33,6 @@ export const updateUser=async(newUserData)=>{
     
     return;
 
-
 }
 
 
