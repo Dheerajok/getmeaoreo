@@ -25,8 +25,8 @@ export const authOptions = nextAuth({
           name: "",
           email: user.email,
           tagline: "",
-          rozarpayID: "",
-          rozarpaySecrat: "",
+          stripeID: "",
+          stripeSecrat: "",
           donerArr:[],
           urlName:""
         })
@@ -39,8 +39,8 @@ export const authOptions = nextAuth({
       const fUser=await fetchUser(session.user.email);
       session.user.name=fUser.name
       session.user.tagline=fUser.tagline
-      session.user.rozarpayID=fUser.rozarpayID
-      session.user.rozarpaySecrat=fUser.rozarpaySecrat
+      session.user.stripeID=fUser.stripeID
+      session.user.stripeSecrat=fUser.stripeSecrat
       session.user.donerArr=fUser.donerArr
       session.user.url=fUser.urlName
   

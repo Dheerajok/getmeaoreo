@@ -11,7 +11,7 @@ const Navbar = () => {
 
   return (
     <header className="text-white body-font bg-black fixed w-full h-20 overflow-hidden">
-      <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+      <div className="container flex flex-wrap p-5 flex-col md:flex-row items-center">
         <Link href="/" className="flex title-font font-medium items-center text-white mb-4 md:mb-0">
           <svg
             xmlns="http://www.w3.org/2000/svg"

@@ -16,13 +16,17 @@ const dashboard = () => {
   //state variables
   const [donerArr, setDonerArr] = useState([])
   const [total, setTotal] = useState(0)
-  const [creatorform, setCreatorform] = useState({ name: "", email: "", tagline: "", rozarpayID: "", rozerSecrat: "" })
+  const [creatorform, setCreatorform] = useState({ name: "", email: "", tagline: "", stripeID: "", stripeSecrat: "" })
 
 
   //event handlers
 
   const handelCreate = () => {
-    if (creatorform.name == "" || creatorform.tagline == "" || creatorform.rozarpayID == "" || creatorform.rozerSecrat == "") {
+
+
+
+
+    if (creatorform.name == "" || creatorform.tagline == "" || creatorform.stripeID == "" || creatorform.stripeSecrat == "") {
 
 
       toast("fill all the fields");
@@ -33,15 +37,15 @@ const dashboard = () => {
         name: creatorform.name,
         email: session.user.email,
         tagline: creatorform.tagline,
-        rozarpayID: creatorform.rozarpayID,
-        rozarpaySecrat: creatorform.rozerSecrat,
+        stripeID: creatorform.stripeID,
+        stripeSecrat: creatorform.stripeSecrat,
         donerArr: [],
         urlName: creatorform.name.toLowerCase().replace(/\s+/g, ''),
 
       })
-      setCreatorform({ name: "", email: "", tagline: "", rozarpayID: "", rozerSecrat: "" })
+      setCreatorform({ name: "", email: "", tagline: "", stripeID: "", stripeSecrat: "" })
 
-
+      redirect(`/dashboard`) 
 
     }
 
@@ -55,7 +59,11 @@ const dashboard = () => {
     useEffect(() => {
 
 
-      setDonerArr(session.user.donerArr)
+      setDonerArr(session.user.donerArr);
+      setTotal(session.user.donerArr.reduce((sum,obj)=>{
+        return sum + obj.quantity
+      },0))
+      
 
     }, [session])
 
@@ -137,24 +145,24 @@ const dashboard = () => {
                         value={creatorform.tagline} onChange={(e) => { setCreatorform({ ...creatorform, [e.target.name]: e.target.value }) }}
                       />
                       <label htmlFor="name" className="leading-7 text-sm text-white">
-                        Rozer Pay ID
+                        Stripe ID
 
                       </label>
                       <input
                         type="text"
                         id="name"
-                        name="rozarpayID"
-                        className="w-full   bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-graywhite1 px-3 leading-8 transition-colors duration-200 ease-in-out" value={creatorform.rozarpayID} onChange={(e) => { setCreatorform({ ...creatorform, [e.target.name]: e.target.value }) }}
+                        name="stripeID"
+                        className="w-full   bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-graywhite1 px-3 leading-8 transition-colors duration-200 ease-in-out" value={creatorform.stripeID} onChange={(e) => { setCreatorform({ ...creatorform, [e.target.name]: e.target.value }) }}
                       />
 
                       <label htmlFor="name" className="leading-7 text-sm text-white">
-                        Rozer Pay Secrat
+                        Stripe Secrat
                       </label>
                       <input
                         type="text"
                         id="name"
-                        name="rozerSecrat"
-                        className="w-full   bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-graywhite1 px-3 leading-8 transition-colors duration-200 ease-in-out" value={creatorform.rozerSecrat} onChange={(e) => { setCreatorform({ ...creatorform, [e.target.name]: e.target.value }) }}
+                        name="stripeSecrat"
+                        className="w-full   bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-graywhite1 px-3 leading-8 transition-colors duration-200 ease-in-out" value={creatorform.stripeSecrat} onChange={(e) => { setCreatorform({ ...creatorform, [e.target.name]: e.target.value }) }}
                       />
 
                     </div>
@@ -256,17 +264,17 @@ const dashboard = () => {
       {/* Same as */}
       <ToastContainer />
 
-      <div className="container h-[100vh] bg-[#000000] bg-[radial-gradient(#ffffff33_1px,#00091d_1px)] bg-[size:20px_20px]">
+      <div className="h-[140vh] lg:h-[100vh] bg-[#000000] bg-[radial-gradient(#ffffff33_1px,#00091d_1px)] bg-[size:20px_20px]">
 
 
-        <section className="text-gray-400 bg-gray-900 body-font h-[100vh]">
+        <section className="text-gray-400 bg-gray-900 body-font h-[140vh] lg:h-[100vh]">
 
 
 
-          <div className="flex items-center lg:w-3/5 mx-auto sm:flex-row flex-col pt-32">
+          <div className="flex items-center w-3/5 mx-auto sm:flex-row flex-col pt-32">
 
 
-            <img src={session.user.image} alt="" className="sm:w-32 sm:h-32 h-20 w-20 sm:mr-10 inline-flex items-center justify-center rounded-full text-indigo-400 bg-gray-800 flex-shrink-0" />
+            <img src={session.user.image} alt="" className="sm:w-32 sm:h-32 h-16 w-20 sm:mr-10 inline-flex items-center justify-center rounded-full text-indigo-400 bg-gray-800 flex-shrink-0" />
 
             <div className="flex-grow sm:text-left text-center mt-6 sm:mt-0">
               <h2 className="text-white text-lg title-font font-medium mb-2">
@@ -283,13 +291,13 @@ const dashboard = () => {
           </div>
           <section className="text-gray-400 bg-gray-900 body-font">
             <div className="container px-5  mx-auto">
-              <div className="lg:w-2/3 flex flex-col sm:flex-row sm:items-center items-start mx-auto">
+              <div className="lg:w-2/3 flex flex-col sm:flex-row items-center mx-auto">
                 <h1 className="flex-grow sm:pr-16 text-2xl font-medium title-font text-white">
                   {session.user.tagline.toUpperCase()}
                 </h1>
                 <button onClick={() => {
                   toast("copied to clipboard");
-                  navigator.clipboard.writeText(`http://localhost:3000/${session.user.name.toLowerCase().replace(/\s+/g, '')}`);
+                  navigator.clipboard.writeText(`${window.location.origin}/${session.user.name.toLowerCase().replace(/\s+/g, '')}`);
 
 
                 }} className="flex-shrink-0 text-white bg-green-600 border-0 py-2 px-8 focus:outline-none hover:bg-green-600 rounded text-lg mt-10 sm:mt-0">
@@ -321,7 +329,7 @@ const dashboard = () => {
                             <path d="M22 4L12 14.01l-3-3" />
                           </svg>
                           <span className="title-font font-medium text-white">
-                            received ₹{user.amount} oreo by {user.name} with a message
+                            received {user.quantity} oreo by {user.name} with a message
                             "{user.message}"
 
                           </span>
@@ -334,8 +342,8 @@ const dashboard = () => {
 
 
                   </div>
-                  <p className="flex mx-auto mt-16 text-white  py-2 px-8 focus:outline-none  rounded text-3xl font-bold w-[50vh]">
-                    Total :- ₹{total} oreo
+                  <p className="flex mx-auto mt-16 text-white  py-2 px-8 focus:outline-none  rounded text-3xl font-bold lg:w-[50vh]">
+                    Total :- {total} oreo
                   </p>
                 </div>
               </section>
