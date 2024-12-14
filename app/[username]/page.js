@@ -4,7 +4,7 @@ import { useSession, signIn, signOut } from "next-auth/react"
 import { updatePayment } from '../actions/useractions'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { checkout } from '../models/Checkout';
+import { checkout } from '../models/checkout';
 
 const username = ({ params }) => {
 
