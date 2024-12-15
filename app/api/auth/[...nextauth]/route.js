@@ -10,8 +10,8 @@ export const authOptions = nextAuth({
   // Configure one or more authentication providers
   providers: [
     GitHubProvider({
-      clientId: process.env.GITHUB_ID,
-      clientSecret: process.env.GITHUB_SECRET
+      clientId: process.env.GITHUBLOGIN_ID,
+      clientSecret: process.env.GITHUBLOGIN_SECRET
     }),
 
   ], callbacks: {
