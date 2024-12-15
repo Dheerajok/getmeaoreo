@@ -31,7 +31,7 @@ export default function Home() {
       
     <span className="flex justify-center flex-col items-center m-9">
 
-    <img src="/man.gif" alt="man" width={100} height={100} className="rounded-full"/>
+    <Image src="/man.gif" alt="man" width={100} height={100} className="rounded-full"/>
       
     
 
@@ -40,14 +40,14 @@ export default function Home() {
 
     <span className="flex justify-center flex-col items-center m-9">
       
-      <img src="/dollar.gif" alt="man" width={100} height={100} className="rounded-full"/>
+      <Image src="/dollar.gif" alt="man" width={100} height={100} className="rounded-full"/>
 
       <p className="text-white text-xl mt-5 w-[70%] justify-center items-center text-center font-bold">Fund Yourself</p><p className="text-white text-xl mt-1 w-[100%] text-center">
     Your Fans are Ready to Help You</p></span>
 
     <span className="flex justify-center flex-col items-center m-9">
       
-    <img src="/group.gif" alt="man" width={100} height={100} className="rounded-full"/>
+    <Image src="/group.gif" alt="man" width={100} height={100} className="rounded-full"/>
 
       <p className="text-white text-xl mt-5 w-[70%] justify-center items-center text-center font-bold">Fund Yourself</p><p className="text-white text-xl mt-1 w-[100%] text-center">
     Your Fans are Ready to Help You</p></span>
@@ -65,7 +65,7 @@ export default function Home() {
     <h1 className="font-bold text-2xl md:text-3xl text-white">Learn More About Us</h1>
     <p className="text-white text-2xl mt-5 w-[90%] justify-center items-center text-justify md:text-center  hidden md:flex">At Get Me A oreo, we are dedicated to supporting developers, creators, and influencers by connecting them with their supporters. Our platform enables individuals to fund their projects and ideas, providing a space where creativity and innovation can thrive.</p>
 
-    <p className="text-white text-2xl mt-5 w-[80%] justify-center items-center text-justify md:text-center hidden md:flex">Our mission is to empower talented individuals by facilitating financial support, allowing them to focus on what they do best – creating. Whether you're a developer coding the next big app, a content creator making engaging videos, or an influencer sharing your passion, Get Me A oreo is here to help you achieve your goals.
+    <p className="text-white text-2xl mt-5 w-[80%] justify-center items-center text-justify md:text-center hidden md:flex">Our mission is to empower talented individuals by facilitating financial support, allowing them to focus on what they do best – creating. Whether youre a developer coding the next big app, a content creator making engaging videos, or an influencer sharing your passion, Get Me A oreo is here to help you achieve your goals.
 
 </p>
     

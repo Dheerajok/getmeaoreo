@@ -3,7 +3,7 @@ import React from 'react'
 import { useSession, signIn, signOut } from "next-auth/react"
 import { redirect } from 'next/navigation'
 
-const login = () => {
+const Login = () => {
 
   const { data: session } = useSession()
 
@@ -27,7 +27,7 @@ const login = () => {
   )
 }
 
-export default login
+export default Login
 
 
 

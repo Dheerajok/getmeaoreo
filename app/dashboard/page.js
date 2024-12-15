@@ -6,9 +6,9 @@ import { redirect } from 'next/navigation'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { updateUser, fetchUser } from '../actions/useractions'
+import Image from 'next/image'
 
-
-const dashboard = () => {
+const Dashboard = () => {
 
 
   const { data: session } = useSession()
@@ -21,10 +21,12 @@ const dashboard = () => {
 
   //event handlers
 
+ 
+   
+  
+
+
   const handelCreate = () => {
-
-
-
 
     if (creatorform.name == "" || creatorform.tagline == "" || creatorform.stripeID == "" || creatorform.stripeSecrat == "") {
 
@@ -54,18 +56,23 @@ const dashboard = () => {
 
 
 
-  if (session) {
+  
 
     useEffect(() => {
 
-
+      if (session) {
       setDonerArr(session.user.donerArr);
       setTotal(session.user.donerArr.reduce((sum,obj)=>{
         return sum + obj.quantity
       },0))
-      
+    }
 
     }, [session])
+
+
+if(session){
+
+
 
     if (session.user.name == "") {
 
@@ -274,7 +281,7 @@ const dashboard = () => {
           <div className="flex items-center w-3/5 mx-auto sm:flex-row flex-col pt-32">
 
 
-            <img src={session.user.image} alt="" className="sm:w-32 sm:h-32 h-16 w-20 sm:mr-10 inline-flex items-center justify-center rounded-full text-indigo-400 bg-gray-800 flex-shrink-0" />
+            <Image src={session.user.image} alt="" className="sm:w-32 sm:h-32 h-16 w-20 sm:mr-10 inline-flex items-center justify-center rounded-full text-indigo-400 bg-gray-800 flex-shrink-0" width={128} height={128}/>
 
             <div className="flex-grow sm:text-left text-center mt-6 sm:mt-0">
               <h2 className="text-white text-lg title-font font-medium mb-2">
@@ -329,8 +336,7 @@ const dashboard = () => {
                             <path d="M22 4L12 14.01l-3-3" />
                           </svg>
                           <span className="title-font font-medium text-white">
-                            received {user.quantity} oreo by {user.name} with a message
-                            "{user.message}"
+                            received {user.quantity} oreo by {user.name} with a message {user.message}
 
                           </span>
                         </div>
@@ -360,11 +366,11 @@ const dashboard = () => {
       {/* {console.log(session)}
       <button className='pt-16' onClick={() => signOut()}>Sign out</button> */}
     </>
-  }
-
+  
+}
   redirect("/login")
 
 
 }
 
-export default dashboard
+export default Dashboard
