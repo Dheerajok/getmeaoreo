@@ -6,7 +6,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { checkout } from '../models/checkout';
 
-const username = ({ params }) => {
+const Username = ({ params }) => {
 
 
   const { data: session } = useSession()
@@ -304,4 +304,4 @@ const username = ({ params }) => {
 
 }
 
-export default username
+export default Username
