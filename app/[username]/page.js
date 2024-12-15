@@ -5,6 +5,7 @@ import { updatePayment } from '../actions/useractions'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { checkout } from '../models/checkout';
+import Image from 'next/image';
 
 const Username = ({ params }) => {
 
@@ -17,7 +18,7 @@ const Username = ({ params }) => {
 
   const handelDoner = () => {
 
-    if (donerForm.name == "" || donerForm.message == "" || donerForm.quantity== 0) {
+    if (donerForm.name == "" || donerForm.message == "" || donerForm.quantity == 0) {
 
       toast("Enter All Field");
 
@@ -25,9 +26,9 @@ const Username = ({ params }) => {
 
 
       updatePayment(donerForm, params.username)
-      
+
       checkout({
-        lineItems:[{price:"price_1QVqrcE3FepQfMCdJ2UW4t5D",quantity:donerForm.quantity}]
+        lineItems: [{ price: "price_1QVqrcE3FepQfMCdJ2UW4t5D", quantity: donerForm.quantity }]
       })
       setDonerForm({ name: "", quantity: "", message: "" })
     }
@@ -55,11 +56,11 @@ const Username = ({ params }) => {
             <div className="max-w-lg h-[80vh]  bg-white dark:bg-gray-900  overflow-hidden shadow-lg">
               <div className=" px-4 pb-6">
                 <div className="text-center my-4">
-                  <img
-                    className="h-32 w-32 rounded-full border-4 border-white dark:border-gray-800 mx-auto my-4"
-                    src={session.user.image}
-                    alt=""
-                  />
+              
+
+                  <Image className="h-32 w-32 rounded-full border-4 border-white dark:border-gray-800 mx-auto my-4" src={session.user.image} alt="logo" width={128} height={128} />
+
+
                   <div className="py-2">
                     <h3 className="font-bold text-2xl text-gray-800 dark:text-white mb-1">
                       {session.user.name.toUpperCase()}
@@ -92,7 +93,7 @@ const Username = ({ params }) => {
 
               <div className="flex flex-col lg:w-4/5 sm:mx-auto sm:mb-2 -mx-2">
 
-                {session.user.donerArr.slice(-2,session.user.donerArr.length).map((user, index) => {
+                {session.user.donerArr.slice(-2, session.user.donerArr.length).map((user, index) => {
                   return <div key={index} className="p-2 w-full" >
 
 
