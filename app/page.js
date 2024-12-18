@@ -6,7 +6,7 @@ export default function Home() {
   return (
    <>
    
-   <div className="container md:h-[230vh] bg-[#000000] bg-[radial-gradient(#ffffff33_1px,#00091d_1px)] bg-[size:20px_20px] lg:w-[100%]">
+   <div className=" lg:h-[230vh] bg-[#000000] bg-[radial-gradient(#ffffff33_1px,#00091d_1px)] bg-[size:20px_20px] lg:w-[100%]">
 
   
     <div className="intro flex justify-center items-center h-[101vh] md:pt-[5%] flex-col gap-1 border-b-2">
@@ -23,7 +23,7 @@ export default function Home() {
     </div>
 
     
-    <div className="intro flex justify-center items-center h-[110vh] md:h-[50vh] flex-col gap-1 border-b-2">
+    <div className="intro flex justify-center items-center h-[150vh] lg:h-[50vh] flex-col gap-1 border-b-2">
     <h1 className="font-bold text-2xl md:text-3xl text-white ">Your fans can buy you a oreo</h1>
 
     <div className="container w-full flex justify-center items-center flex-col lg:flex-row">
@@ -61,7 +61,7 @@ export default function Home() {
     </div>
 
     
-    <div className="intro flex justify-center items-center  p-10 md:h-[70vh] pt-[5%] flex-col gap-1">
+    <div className="intro flex justify-center items-center  p-10 lg:h-[70vh] pt-[5%] flex-col gap-1">
     <h1 className="font-bold text-2xl md:text-3xl text-white">Learn More About Us</h1>
     <p className="text-white text-2xl mt-5 w-[90%] justify-center items-center text-justify md:text-center  hidden md:flex">At Get Me A oreo, we are dedicated to supporting developers, creators, and influencers by connecting them with their supporters. Our platform enables individuals to fund their projects and ideas, providing a space where creativity and innovation can thrive.</p>
 
