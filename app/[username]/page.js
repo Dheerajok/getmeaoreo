@@ -47,13 +47,13 @@ const Username = ({ params }) => {
 
 
 
-        <div className="h-[180vh] md:h-[100vh] dark:bg-gray-700 bg-gray-200 pt-28 flex justify-center items-center flex-col">
+        <div className="h-[auto] sm:h-[100vh] lg:h-[100vh] dark:bg-gray-700 bg-gray-200 pb-28 sm:pb-0 pt-28 flex justify-center items-center flex-col">
 
 
           <ToastContainer />
-          <span className="flex flex-wrap">
+          <span className="flex flex-wrap w-[90vw] lg:w-[70vw] flex-col items-center sm:flex-row">
 
-            <div className="max-w-lg h-[80vh]  bg-white dark:bg-gray-900  overflow-hidden shadow-lg">
+            <div className="w-[90vw] sm:w-1/2 sm:h-[80vh]  bg-white dark:bg-gray-900  overflow-hidden shadow-lg">
               <div className=" px-4 pb-6">
                 <div className="text-center my-4">
               
@@ -86,7 +86,7 @@ const Username = ({ params }) => {
                   </div>
                 </div>
 
-                <p className="text-white">{session.user.tagline.toUpperCase()}</p>
+                <p className="text-white text-center">{session.user.tagline.toUpperCase()}</p>
 
 
               </div>
@@ -97,8 +97,8 @@ const Username = ({ params }) => {
                   return <div key={index} className="p-2 w-full" >
 
 
-                    <span className="title-font font-medium text-white">
-                      Received {user.quantity} Oreo By {user.name} With A Message {user.message}
+                    <span >
+                     <p className="title-font font-medium text-white px-1 text-justify">Received {user.quantity} Oreo By {user.name} With A Message {user.message}</p> 
 
                     </span>
 
@@ -110,7 +110,7 @@ const Username = ({ params }) => {
 
             </div>
 
-            <div className="max-w-lg h-[80vh]  bg-white dark:bg-gray-900 overflow-hidden shadow-lg">
+            <div className="w-[90vw] sm:w-1/2 sm:h-[80vh]  bg-white dark:bg-gray-900 overflow-hidden shadow-lg">
               <div className="border-b px-4 pb-6 flex justify-center flex-col">
                 <div className="text-center my-4">
 
@@ -152,6 +152,7 @@ const Username = ({ params }) => {
                   type="text"
                   id="message"
                   name="message"
+                  maxLength={140}
                   className="w-full  bg-opacity-50 mb-3 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-graywhite1 px-3 leading-8 transition-colors duration-200 ease-in-out" value={donerForm.message} onChange={(e) => {
                     setDonerForm({ ...donerForm, [e.target.name]: e.target.value })
 

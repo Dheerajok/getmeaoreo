@@ -10,7 +10,7 @@ const Navbar = () => {
 
 
   return (
-    <header className="text-white body-font bg-black fixed w-full h-20 overflow-hidden">
+    <header className="text-white body-font bg-black fixed w-full h-20 overflow-hidden z-10">
       <div className="flex flex-wrap p-5 flex-col md:flex-row items-center">
         <Link href="/" className="flex title-font font-medium items-center text-white mb-4 md:mb-0">
           <svg

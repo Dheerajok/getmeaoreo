@@ -2,10 +2,10 @@ import React from 'react';
 
 const About = () => {
   return (
-    <div className="bg-black h-[100vh]">
+    <div className="bg-black h-[205vh] md:h-[150vh] lg:h-[100vh]">
       <section
         id="features"
-        className="block px-6 py-10 md:py-20 md:px-10 border-t border-b border-neutral-900 bg-neutral-900/30 h-[100vh]"
+        className="block px-6 py-20 md:py-36 md:px-10 border-t border-b border-neutral-900 bg-neutral-900/30 h-[100vh]"
       >
         <div className="relative mx-auto max-w-5xl text-center">
           <span className="text-gray-400 my-3 flex items-center justify-center font-medium uppercase tracking-wider">
@@ -18,7 +18,7 @@ const About = () => {
             Get Me A Oreo enables creators to connect with their supporters, turning ideas into reality through community-driven funding.
           </p>
         </div>
-        <div className="relative mx-auto max-w-7xl z-10 grid grid-cols-1 gap-10 pt-14 sm:grid-cols-2 lg:grid-cols-3">
+        <div className=" mx-auto max-w-7xl z-10 grid grid-cols-1 gap-10 pt-14 sm:grid-cols-2 lg:grid-cols-3">
           <div className="rounded-md border border-neutral-800 bg-neutral-900/50 p-8 text-center shadow">
             <div
               className="button-text mx-auto flex h-12 w-12 items-center justify-center rounded-md border"

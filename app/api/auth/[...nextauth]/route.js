@@ -1,10 +1,9 @@
-
 import nextAuth from "next-auth";
 import GitHubProvider from "next-auth/providers/github";
 import User from "@/app/models/User";
 import connectDB from "@/app/db/ConnectDb";
 import { fetchUser } from "@/app/actions/useractions";
-
+import GoogleProvider from "next-auth/providers/google";
 
 export const authOptions = nextAuth({
   // Configure one or more authentication providers
@@ -12,7 +11,10 @@ export const authOptions = nextAuth({
     GitHubProvider({
       clientId: process.env.GITHUBLOGIN_ID,
       clientSecret: process.env.GITHUBLOGIN_SECRET
-    }),
+    }),GoogleProvider({
+      clientId: process.env.GOOGLE_CLIENT_ID,
+      clientSecret: process.env.GOOGLE_CLIENT_SECRET
+    })
 
   ], callbacks: {
     async signIn({ user, account, profile, email, credentials }) {

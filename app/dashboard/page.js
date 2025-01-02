@@ -271,10 +271,10 @@ if(session){
       {/* Same as */}
       <ToastContainer />
 
-      <div className="h-[140vh] lg:h-[100vh] bg-[#000000] bg-[radial-gradient(#ffffff33_1px,#00091d_1px)] bg-[size:20px_20px]">
+      <div className="min-h-[160vh] sm:min-h-[100vh] lg:min-h-[100vh] bg-[#000000] bg-[radial-gradient(#ffffff33_1px,#00091d_1px)] bg-[size:20px_20px]">
 
 
-        <section className="text-gray-400 bg-gray-900 body-font h-[140vh] lg:h-[100vh]">
+        <section className="text-gray-400 bg-gray-900 body-font min-h-[160vh] sm:min-h-[100vh] lg:min-h-[100vh] ">
 
 
 
